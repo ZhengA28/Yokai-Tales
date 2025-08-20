@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://74khnecm7dsq"]
+
+[ext_resource type="Script" uid="uid://ceg2ugseb4x72" path="res://Scripts/ScoreHandler.cs" id="1_0ru3d"]
+[ext_resource type="Texture2D" uid="uid://cgae56n00e3mh" path="res://Sprites/UI/Buttons/Score.png" id="2_atwjb"]
+[ext_resource type="FontFile" uid="uid://jc7w0mu3ttfo" path="res://Sprites/Text/EightBitDragon-anqx.ttf" id="3_3fuo5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r82fl"]
+texture = ExtResource("2_atwjb")
+expand_margin_bottom = 1.0
+
+[sub_resource type="Theme" id="Theme_wq4n8"]
+default_font = ExtResource("3_3fuo5")
+default_font_size = 24
+
+[node name="Score" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -20.0
+offset_right = 80.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0ru3d")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r82fl")
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 1.0
+offset_right = 90.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_wq4n8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "00000000"
+horizontal_alignment = 1
+vertical_alignment = 1

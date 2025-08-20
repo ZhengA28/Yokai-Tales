@@ -1,0 +1,71 @@
+[
+    {
+        "Speaker" : "", 
+        "Sprite" : "",
+        "Position" : "",
+        "Dialogue" : "The snow falls heavily around an ancient ruined shrine."
+    },
+
+    {
+        "Speaker" : "", 
+        "Sprite" : "Miko",
+        "Position" : "Left",
+        "Dialogue" : "Miko steps cautiously toward the crumbling structure."
+    },
+
+    {
+        "Speaker" : "", 
+        "Sprite" : "Miko",
+        "Position" : "Left",
+        "Dialogue" : "A chilling presence appears as the wind howls."
+    },
+
+    {
+        "Speaker" : "", 
+        "Sprite" : "Yuki Onna",
+        "Position" : "Right",
+        "Dialogue" : "The spirit of the snow, emerges from the mist. She is etheral, her form like ice and snow, and eyes glowing with anger."
+    },
+
+    {
+        "Speaker" : "Yuki Onna", 
+        "Sprite" : "Idle",
+        "Position" : "Left",
+        "Dialogue" : "Who dares enter my domain?"
+    },
+
+    {
+        "Speaker" : "Miko", 
+        "Sprite" : "Serious",
+        "Position" : "Left",
+        "Dialogue" : "I seek the shrine. THe one that once stood here, protecting these mountians. But now... only sorrow remains."
+    },
+
+    {
+        "Speaker" : "Yuki Onna", 
+        "Sprite" : "Idle",
+        "Position" : "Left",
+        "Dialogue" : "The shrine is lost, just like me. Why should I care for it? I'm cursed to avenge my own death."
+    },
+
+    {
+        "Speaker" : "Miko", 
+        "Sprite" : "Serious",
+        "Position" : "Left",
+        "Dialogue" : "Vengeance won't bring you peace. I feel your pain, but its not too late to let go."
+    },
+
+    {
+        "Speaker" : "Yuki Onna", 
+        "Sprite" : "Idle",
+        "Position" : "Right",
+        "Dialogue" : "You think you cna change me with words? Rage is all I have left!"
+    },
+
+    {
+        "Speaker" : "Miko", 
+        "Sprite" : "Idle",
+        "Position" : "Right",
+        "Dialogue" : "Then let's settle this with wisdom, not anger."
+    }
+]

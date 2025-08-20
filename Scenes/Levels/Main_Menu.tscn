@@ -1,0 +1,245 @@
+[gd_scene load_steps=30 format=3 uid="uid://bnwn3ytvfjx0q"]
+
+[ext_resource type="Script" uid="uid://baocfyu4qpovy" path="res://Scripts/MainMenu.cs" id="1_e6p1w"]
+[ext_resource type="Texture2D" uid="uid://dt847qk0hkire" path="res://Sprites/UI/Background/Winter/Layers/mid-layer-a.png" id="2_foc0e"]
+[ext_resource type="Texture2D" uid="uid://din4mrgrpahs2" path="res://Sprites/UI/Icons/Title.png" id="3_3oend"]
+[ext_resource type="Texture2D" uid="uid://84lvvoemvowq" path="res://Sprites/UI/Buttons/Start_Button_dark.png" id="4_eetnp"]
+[ext_resource type="Texture2D" uid="uid://bbxbrsuv4gxou" path="res://Sprites/UI/Buttons/Settings_Button.png" id="5_gvoov"]
+[ext_resource type="Texture2D" uid="uid://b5md6x2eckgwc" path="res://Sprites/UI/Buttons/Settings_Button_Dark.png" id="6_sfu2j"]
+[ext_resource type="Texture2D" uid="uid://dwtoumg4cltpe" path="res://Sprites/UI/Buttons/Credit_Button.png" id="7_fqq7u"]
+[ext_resource type="Texture2D" uid="uid://b7osfcyija7bq" path="res://Sprites/UI/Buttons/Credit_Button_Dark.png" id="8_d1gav"]
+[ext_resource type="AudioStream" uid="uid://cffmsgi60u2k8" path="res://Music/SFX/Confirm.wav" id="9_t2ykt"]
+[ext_resource type="PackedScene" uid="uid://b3e6rx5tu7hbl" path="res://Scenes/UI/Settings_Menu.tscn" id="10_n5w0i"]
+[ext_resource type="AudioStream" uid="uid://7aifmjeunucc" path="res://Music/BGM/02 A Pleasant Journey_01.ogg" id="11_3crj0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loo7a"]
+texture = ExtResource("2_foc0e")
+modulate_color = Color(0.873249, 0.907267, 0.912503, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fh7cp"]
+texture = ExtResource("3_3oend")
+expand_margin_left = 150.0
+expand_margin_top = 150.0
+expand_margin_right = 150.0
+expand_margin_bottom = 150.0
+
+[sub_resource type="Animation" id="Animation_loo7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(621, 93)]
+}
+
+[sub_resource type="Animation" id="Animation_cmrfp"]
+resource_name = "Slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-146, 93), Vector2(621, 93)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_if7li"]
+_data = {
+&"RESET": SubResource("Animation_loo7a"),
+&"Slide": SubResource("Animation_cmrfp")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_koqhg"]
+load_path = "res://.godot/imported/Start_Button.png-fc12b222edd0f9b274755733dc343ea2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e205"]
+atlas = SubResource("CompressedTexture2D_koqhg")
+region = Rect2(26.6408, 87.0403, 202.719, 81.4409)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmrfp"]
+atlas = ExtResource("4_eetnp")
+region = Rect2(26.641, 87.04, 202.719, 81.441)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koqhg"]
+atlas = ExtResource("4_eetnp")
+region = Rect2(26.641, 87.04, 202.719, 81.441)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riqfo"]
+atlas = ExtResource("5_gvoov")
+region = Rect2(26.4992, 86.9171, 203.041, 81.9851)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrcx7"]
+atlas = ExtResource("6_sfu2j")
+region = Rect2(26.499, 86.917, 203.041, 81.985)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh7cp"]
+atlas = ExtResource("6_sfu2j")
+region = Rect2(26.499, 86.917, 203.041, 81.985)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x1g0"]
+atlas = ExtResource("7_fqq7u")
+region = Rect2(27.7762, 87.1251, 201.398, 81.5609)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7467j"]
+atlas = ExtResource("8_d1gav")
+region = Rect2(27.776, 87.125, 201.398, 81.561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxkem"]
+atlas = ExtResource("8_d1gav")
+region = Rect2(27.776, 87.125, 201.398, 81.561)
+
+[sub_resource type="Animation" id="Animation_rrcx7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(539, 347)]
+}
+
+[sub_resource type="Animation" id="Animation_if7li"]
+resource_name = "Slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1287, 347), Vector2(544, 347)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fh7cp"]
+_data = {
+&"RESET": SubResource("Animation_rrcx7"),
+&"Slide": SubResource("Animation_if7li")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6p1w")
+
+[node name="Background" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_loo7a")
+
+[node name="Title" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -19.0
+offset_top = 93.0
+offset_right = 21.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_fh7cp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
+libraries = {
+&"": SubResource("AnimationLibrary_if7li")
+}
+autoplay = "Slide"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -13.0
+offset_right = 102.0
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_8e205")
+texture_pressed = SubResource("AtlasTexture_cmrfp")
+texture_hover = SubResource("AtlasTexture_koqhg")
+stretch_mode = 0
+
+[node name="SettingsButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_riqfo")
+texture_pressed = SubResource("AtlasTexture_rrcx7")
+texture_hover = SubResource("AtlasTexture_fh7cp")
+stretch_mode = 0
+
+[node name="CreditButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_2x1g0")
+texture_pressed = SubResource("AtlasTexture_7467j")
+texture_hover = SubResource("AtlasTexture_yxkem")
+stretch_mode = 0
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("9_t2ykt")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer"]
+libraries = {
+&"": SubResource("AnimationLibrary_fh7cp")
+}
+autoplay = "Slide"
+
+[node name="Settings_Menu" parent="." instance=ExtResource("10_n5w0i")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 118.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_3crj0")
+autoplay = true
+bus = &"Music"
+parameters/looping = false
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_On_Start_Pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_On_Settings_Pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditButton" to="." method="_On_Credit_Button_Pressed"]

@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=4 uid="uid://dtxqv1nvxjaka"]
+
+[ext_resource type="Script" uid="uid://cevbg6hlvmh7g" path="res://Scripts/Grid.cs" id="1_413sm"]
+[ext_resource type="Texture2D" uid="uid://cfigmip0evaki" path="res://Sprites/UI/Tileset/tileset.png" id="2_pb7a0"]
+[ext_resource type="PackedScene" uid="uid://o323sw8o22pf" path="res://Scenes/UI/Pause_Menu.tscn" id="5_pb7a0"]
+[ext_resource type="AudioStream" uid="uid://4pkcf82amg0u" path="res://Music/BGM/world wanderer.ogg" id="5_vndc4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdbcv"]
+texture = ExtResource("2_pb7a0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0yrm8"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_tdbcv")
+
+[node name="Grid" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_413sm")
+offset = 32
+numRows = 9
+numColumns = 9
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD/////AAAHAAEAAAAAAP//AAADAAEAAAD//wAAAAABAAEAAAAAAAAAAAAHAAEAAAABAP//AAAHAAEAAAABAAAAAAABAAEAAAACAP//AAABAAEAAAACAAAAAAAHAAEAAAD+////AAABAAEAAAD+/wAAAAAHAAEAAAD9////AAAHAAEAAAADAP//AAAHAAEAAAD8////AAABAAEAAAD8/wAAAAAHAAEAAAD9/wAAAAABAAEAAAD8/wEAAAABAAEAAAD8/wIAAAAHAAEAAAD8/wMAAAABAAEAAAD8/wQAAAAHAAEAAAD8/wUAAAABAAEAAAD8/wYAAAAHAAEAAAD8/wcAAAABAAEAAAD9/wcAAAAHAAEAAAD9/wYAAAABAAEAAAD9/wUAAAAHAAEAAAD9/wQAAAABAAEAAAD9/wMAAAAHAAEAAAD9/wIAAAABAAEAAAD9/wEAAAAHAAEAAAD+/wEAAAABAAEAAAD+/wIAAAAHAAEAAAD+/wMAAAABAAEAAAD+/wQAAAAHAAEAAAD+/wUAAAABAAEAAAD+/wYAAAAHAAEAAAD+/wcAAAABAAEAAAD//wcAAAAHAAEAAAD//wYAAAABAAEAAAD//wUAAAAHAAEAAAD//wQAAAABAAEAAAD//wMAAAAHAAEAAAD//wIAAAABAAEAAAD//wEAAAAHAAEAAAAAAAEAAAABAAEAAAAAAAIAAAAHAAEAAAAAAAMAAAABAAEAAAAAAAQAAAAHAAEAAAAAAAUAAAABAAEAAAAAAAYAAAAHAAEAAAAAAAcAAAABAAEAAAABAAcAAAAHAAEAAAABAAYAAAABAAEAAAABAAUAAAAHAAEAAAABAAQAAAABAAEAAAABAAMAAAAHAAEAAAABAAIAAAABAAEAAAABAAEAAAAHAAEAAAACAAEAAAABAAEAAAACAAIAAAAHAAEAAAACAAMAAAABAAEAAAACAAQAAAAHAAEAAAACAAUAAAABAAEAAAACAAYAAAAHAAEAAAACAAcAAAABAAEAAAADAAcAAAAHAAEAAAADAAYAAAABAAEAAAADAAUAAAAHAAEAAAADAAQAAAABAAEAAAADAAMAAAAHAAEAAAADAAIAAAABAAEAAAADAAEAAAAHAAEAAAADAAAAAAABAAEAAAAEAP//AAABAAEAAAAEAAAAAAAHAAEAAAAEAAEAAAABAAEAAAAEAAIAAAAHAAEAAAAEAAMAAAABAAEAAAAEAAQAAAAHAAEAAAAEAAUAAAABAAEAAAAEAAYAAAAHAAEAAAAEAAcAAAABAAEAAAD7////AAABAAYAAAD7/wAAAAABAAYAAAD7/wEAAAABAAYAAAD7/wIAAAABAAYAAAD7/wMAAAABAAYAAAD7/wQAAAABAAYAAAD7/wUAAAABAAYAAAD7/wYAAAABAAYAAAD7/wcAAAABAAYAAAAFAP//AAABAAYAABAFAAAAAAABAAYAABAFAAEAAAABAAYAABAFAAIAAAABAAYAABAFAAMAAAABAAYAABAFAAQAAAABAAYAABAFAAUAAAABAAYAABAFAAYAAAABAAYAABAFAAcAAAABAAYAABA=")
+tile_set = SubResource("TileSet_0yrm8")
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_pb7a0")]
+visible = false
+layout_mode = 1
+offset_top = 60.0
+offset_bottom = 60.0
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vndc4")
+autoplay = true
+bus = &"Music"
+playback_type = 1
+
+[node name="FallTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="RefillTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="FallTimer" to="." method="_Fall_Timer"]
+[connection signal="timeout" from="RefillTimer" to="." method="_Refill_Timer"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_Destroy_Piece"]

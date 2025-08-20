@@ -1,0 +1,195 @@
+[gd_scene load_steps=15 format=3 uid="uid://b3e6rx5tu7hbl"]
+
+[ext_resource type="FontFile" uid="uid://jc7w0mu3ttfo" path="res://Sprites/Text/EightBitDragon-anqx.ttf" id="1_rr0xh"]
+[ext_resource type="Script" uid="uid://dacquxmoh6alj" path="res://Scripts/SettingsMenu.cs" id="1_xt5t5"]
+[ext_resource type="Texture2D" uid="uid://dcb7d8jrew64e" path="res://Sprites/UI/Icons/282.png" id="2_xt5t5"]
+[ext_resource type="Script" uid="uid://ivnfdmlmrri8" path="res://Scripts/SoundSlider.cs" id="3_jiu22"]
+[ext_resource type="Texture2D" uid="uid://be108fxv5hqg2" path="res://Sprites/UI/Icons/279.png" id="3_lto24"]
+[ext_resource type="AudioStream" uid="uid://cffmsgi60u2k8" path="res://Music/SFX/Confirm.wav" id="4_7xdvh"]
+[ext_resource type="Texture2D" uid="uid://btgou3g7lsf4a" path="res://Sprites/UI/Icons/283.png" id="4_owh70"]
+[ext_resource type="AudioStream" uid="uid://opt8bxx7evw4" path="res://Music/SFX/Cancel.wav" id="4_q6gsc"]
+[ext_resource type="Texture2D" uid="uid://bfjjeojd8pod5" path="res://Sprites/UI/Icons/281.png" id="6_apjft"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr0xh"]
+bg_color = Color(0.09, 0.09, 0.09, 0.823529)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_owh70"]
+color = Color(0.11, 0.0495, 0, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_apjft"]
+color = Color(0.86, 0.86, 0.86, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6gsc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jiyl"]
+bg_color = Color(0.427492, 0.427493, 0.427493, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xt5t5")
+
+[node name="Background" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -125.0
+offset_right = 285.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rr0xh")
+
+[node name="BGM" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -75.0
+offset_right = 20.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_rr0xh")
+text = "BGM"
+horizontal_alignment = 1
+
+[node name="SFX" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -4.0
+offset_right = 20.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_rr0xh")
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="BGMSlider" type="HSlider" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -53.0
+offset_right = 247.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+theme_override_styles/slider = SubResource("StyleBoxLine_owh70")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_apjft")
+max_value = 1.0
+step = 0.05
+value = 0.5
+tick_count = 1
+ticks_on_borders = true
+script = ExtResource("3_jiu22")
+audioName = "Music"
+
+[node name="SFXSlider" type="HSlider" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = 25.0
+offset_right = 245.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+theme_override_styles/slider = SubResource("StyleBoxLine_owh70")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_apjft")
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 1
+script = ExtResource("3_jiu22")
+audioName = "SFX"
+
+[node name="Close" type="Button" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 74.0
+offset_right = 40.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_rr0xh")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q6gsc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7jiyl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7jiyl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7jiyl")
+text = "Close"
+
+[node name="buttonSFX" type="AudioStreamPlayer" parent="Background/Close"]
+stream = ExtResource("4_7xdvh")
+bus = &"SFX"
+
+[node name="BGMButton" type="TextureButton" parent="Background"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 13.0
+offset_top = 50.0
+offset_right = 69.0
+offset_bottom = 106.0
+toggle_mode = true
+texture_normal = ExtResource("2_xt5t5")
+texture_pressed = ExtResource("4_owh70")
+
+[node name="SFXButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 130.0
+offset_right = 69.0
+offset_bottom = 186.0
+toggle_mode = true
+texture_normal = ExtResource("3_lto24")
+texture_pressed = ExtResource("6_apjft")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q6gsc")
+
+[connection signal="value_changed" from="Background/BGMSlider" to="Background/BGMSlider" method="_On_Slider_Change"]
+[connection signal="value_changed" from="Background/SFXSlider" to="Background/SFXSlider" method="_On_Slider_Change"]
+[connection signal="pressed" from="Background/Close" to="." method="_On_Closed"]
+[connection signal="pressed" from="Background/BGMButton" to="." method="_On_BGM"]
+[connection signal="pressed" from="Background/SFXButton" to="." method="_On_SFX"]

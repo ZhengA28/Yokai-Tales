@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b01omi7u8x4tt"
+path="res://.godot/imported/15 Sleepy Princess_01.ogg-0dadc0066300520b6ea37f431d177c87.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/BGM/15 Sleepy Princess_01.ogg"
+dest_files=["res://.godot/imported/15 Sleepy Princess_01.ogg-0dadc0066300520b6ea37f431d177c87.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
