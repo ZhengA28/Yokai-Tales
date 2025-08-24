@@ -17,13 +17,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Paths="*res://Scripts/Paths.cs"
-PlayerInfo="*res://Scripts/PlayerInfo.cs"
+Paths="*res://Utilities/Globals/Paths.cs"
+PlayerInfo="*res://Utilities/Globals/PlayerInfo.cs"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [dotnet]
 
