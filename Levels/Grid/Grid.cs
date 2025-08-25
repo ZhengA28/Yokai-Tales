@@ -8,6 +8,7 @@ public partial class Grid : Control
 {
 	[Signal] public delegate void UpdateScoreEventHandler(int points);
 	[Signal] public delegate void UpdateTurnsEventHandler();
+	[Signal] public delegate void UpdateHealthEventHandler(int damage);
 	private Orbs[,] grid;   //2D array containing each Orb
 	private List<Orbs> matchedPieces;   //list to keep track of current matched pieces
 	private PackedScene[] orbType = [
@@ -256,7 +257,8 @@ public partial class Grid : Control
 		if (points != 0)
 		{
 			destroyTimer.Start();
-			EmitSignal(SignalName.UpdateScore, points);
+			//EmitSignal(SignalName.UpdateScore, points);
+			EmitSignal(SignalName.UpdateHealth, points);
 			return true;
 		}
 		else

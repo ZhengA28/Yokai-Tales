@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnuc34i2y7o63"]
+[gd_scene load_steps=7 format=3 uid="uid://s0qun14mmbhl"]
 
-[ext_resource type="Texture2D" uid="uid://cu6y22usj04qc" path="res://Characters/Shared/Sprite Sheet/Character Sprite Sheet.png" id="1_ghxb8"]
-[ext_resource type="PackedScene" uid="uid://ckl17bqx1jpff" path="res://UI/HUD/HealthBar/Health_Bar.tscn" id="2_sd62q"]
+[ext_resource type="Script" uid="uid://dp084c4sqcpxu" path="res://Levels/Battle/Character_Behavior/EnemyBehavior.cs" id="1_ehd7e"]
+[ext_resource type="Texture2D" uid="uid://cu6y22usj04qc" path="res://Characters/Shared/Sprite Sheet/Character Sprite Sheet.png" id="1_sxbp1"]
+[ext_resource type="PackedScene" uid="uid://ckl17bqx1jpff" path="res://UI/HUD/HealthBar/Health_Bar.tscn" id="2_ehd7e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjexi"]
 bg_color = Color(0, 0, 0, 0.843137)
@@ -28,26 +29,28 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_145js"]
-atlas = ExtResource("1_ghxb8")
-region = Rect2(128, 0, 288, 288)
+atlas = ExtResource("1_sxbp1")
+region = Rect2(128, 512, 256, 256)
 
-[node name="CharacterStatus" type="Control"]
+[node name="Avatar" type="Control"]
 texture_filter = 1
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ehd7e")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -95.9999
 offset_right = 50.0
-offset_bottom = 2.00006
+offset_bottom = 98.0
 grow_vertical = 0
 scale = Vector2(2.22806, 0.979023)
 theme_override_styles/panel = SubResource("StyleBoxFlat_rjexi")
@@ -79,7 +82,10 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_145js")
 expand_mode = 1
 
-[node name="HealthBar" parent="." instance=ExtResource("2_sd62q")]
-layout_mode = 0
-offset_top = 614.0
-offset_bottom = 622.0
+[node name="HealthBar" parent="." instance=ExtResource("2_ehd7e")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -8.0
+offset_top = -10.0
+offset_right = 120.0
+offset_bottom = -2.0

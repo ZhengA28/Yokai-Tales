@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvp77cvpfvdhp"]
+[gd_scene load_steps=12 format=3 uid="uid://bvp77cvpfvdhp"]
 
 [ext_resource type="Script" uid="uid://c6hkx4g76w2hr" path="res://Levels/Battle/MatchLevel.cs" id="1_44p8n"]
 [ext_resource type="Texture2D" uid="uid://kjrl7mwdwulv" path="res://Levels/Backgrounds/Winter/Layers/mid-layer-b.png" id="2_w4020"]
+[ext_resource type="PackedScene" uid="uid://bu6o34pu0ejco" path="res://Utilities/Game_Manager/Game_Manager.tscn" id="3_cm4yd"]
 [ext_resource type="PackedScene" uid="uid://dtxqv1nvxjaka" path="res://Levels/Grid/Grid.tscn" id="3_k8oy0"]
+[ext_resource type="PackedScene" uid="uid://h14esoenwqe3" path="res://Characters/Miko/Miko_Battle.tscn" id="4_0bn2s"]
 [ext_resource type="PackedScene" uid="uid://74khnecm7dsq" path="res://UI/HUD/Score/Score.tscn" id="4_cm4yd"]
 [ext_resource type="PackedScene" uid="uid://d3e2yvkyyrmyw" path="res://UI/HUD/Turns/Turns.tscn" id="5_0bn2s"]
-[ext_resource type="PackedScene" uid="uid://bnuc34i2y7o63" path="res://Characters/Shared/AvatarFrame.tscn" id="6_nndty"]
+[ext_resource type="PackedScene" uid="uid://s0qun14mmbhl" path="res://Characters/Yuki Onna/YukiOnna_Battle.tscn" id="5_nndty"]
 [ext_resource type="PackedScene" uid="uid://vfkkdssp6tat" path="res://UI/Buttons/MenuButton.tscn" id="7_xtro8"]
 [ext_resource type="PackedScene" uid="uid://o323sw8o22pf" path="res://UI/Pause_Menu/Pause_Menu.tscn" id="8_gxav8"]
 
@@ -30,6 +32,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xkc8g")
+
+[node name="GameManager" parent="." instance=ExtResource("3_cm4yd")]
+layout_mode = 1
+offset_top = -1.52588e-05
+
+[node name="Player" parent="." instance=ExtResource("4_0bn2s")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -200.0
+offset_right = 24.0
+offset_bottom = -200.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="Enemy" parent="." instance=ExtResource("5_nndty")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -200.0
+offset_right = -32.0
+offset_bottom = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(-2, 2)
 
 [node name="Grid" parent="." instance=ExtResource("3_k8oy0")]
 layout_mode = 1
@@ -66,24 +102,6 @@ offset_bottom = 56.0
 scale = Vector2(2, 2)
 totalTurns = 20
 
-[node name="Enemy" parent="." instance=ExtResource("6_nndty")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(-2, 2)
-
-[node name="Player" parent="." instance=ExtResource("6_nndty")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_right = 0.0
-grow_horizontal = 1
-grow_vertical = 0
-scale = Vector2(2, 2)
-
 [node name="MenuButton" parent="." instance=ExtResource("7_xtro8")]
 layout_mode = 1
 
@@ -92,6 +110,7 @@ visible = false
 layout_mode = 1
 scale = Vector2(2, 2)
 
+[connection signal="UpdateHealth" from="Grid" to="Enemy" method="_Update_Health"]
 [connection signal="UpdateScore" from="Grid" to="Score" method="_Update_Score"]
 [connection signal="UpdateTurns" from="Grid" to="Turns" method="_Update_Turns"]
 [connection signal="pressed" from="MenuButton" to="." method="_On_Menu"]

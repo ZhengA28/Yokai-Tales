@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://clkm61d17rn0q"]
+[gd_scene load_steps=7 format=3 uid="uid://clkm61d17rn0q"]
 
 [ext_resource type="Script" uid="uid://kls1ov60b5v7" path="res://Maps/Over_World_Map/Area/AreaIcon.cs" id="1_6mrgv"]
 [ext_resource type="Texture2D" uid="uid://b5n82054r137v" path="res://Objects/Items/Icon sheet (32x32).png" id="1_ni17r"]
+[ext_resource type="Texture2D" uid="uid://12lt6c5m7fb" path="res://Objects/Items/Icon sheet Dark (32x32).PNG" id="3_t5sq5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mrgv"]
 atlas = ExtResource("1_ni17r")
 region = Rect2(64, 800, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b50o6"]
-atlas = ExtResource("1_ni17r")
+atlas = ExtResource("3_t5sq5")
 region = Rect2(64, 800, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0b0a"]
